@@ -1,0 +1,265 @@
+.container {
+    padding: 0.5rem;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #1d1d1d;
+}
+
+.hide {
+    visibility: hidden;
+}
+
+@media screen and (min-width: 0px) and (max-width: 768px) {
+    .searchbar {
+        margin: 20px 0 35px 0;
+        padding: 8px 16px 8px 12px;
+        gap: 8px;
+        width: 200px;
+        height: 32px;
+        border-radius: 16px;
+    }
+
+    .searchIcon {
+        width: 16px;
+        height: 16px;
+    }
+
+    .searchPlaceholder {
+        font-size: 10px;
+        line-height: 16px;
+    }
+
+    .card {
+        margin: 0 8px 12px 8px;
+    }
+
+    .paginationContainer {
+        display: grid;
+        position: relative;
+        list-style: none;
+        color: #ffffff;
+        margin: 50px 0 65px 0;
+        padding: 0;
+    }
+
+    .paginationPrevious {
+        grid-row-start: 1;
+    }
+
+    .paginationPreviousLink {
+        display: inline-block;
+        position: absolute;
+        top: -39px;
+        left: 0;
+        right: 0;
+        padding: 4px;
+        margin: 3px auto;
+        width: 72px;
+        font-size: 10px;
+        background-color: #dc0a2d;
+        border: 1px solid #dc0a2d;
+        border-radius: 4px;
+        text-align: center;
+        box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+    }
+
+    .paginationNext {
+        grid-row-start: 3;
+    }
+
+    .paginationNextLink {
+        display: inline-block;
+        position: absolute;
+        bottom: -39px;
+        left: 0;
+        right: 0;
+        padding: 4px;
+        margin: 3px auto;
+        width: 72px;
+        font-size: 10px;
+        background-color: #dc0a2d;
+        border: 1px solid #dc0a2d;
+        border-radius: 4px;
+        text-align: center;
+        box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+    }
+
+    .paginationBreak {
+        grid-row-start: 2;
+    }
+
+    .paginationBreakLink {
+        display: inline-block;
+        padding: 4px;
+        margin: 3px;
+        width: 32px;
+        font-size: 10px;
+        background-color: #dc0a2d;
+        border: 1px solid #dc0a2d;
+        border-radius: 4px;
+        text-align: center;
+        box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+    }
+
+    .paginationPage {
+        grid-row-start: 2;
+    }
+
+    .paginationPageLink {
+        display: inline-block;
+        padding: 4px;
+        margin: 3px;
+        width: 32px;
+        font-size: 10px;
+        background-color: #dc0a2d;
+        border: 1px solid #dc0a2d;
+        border-radius: 4px;
+        text-align: center;
+        box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .searchbar {
+        margin: 40px 0 70px 0;
+        padding: 16px 32px 16px 24px;
+        gap: 16px;
+        width: 500px;
+        height: 64px;
+        border-radius: 32px;
+    }
+
+    .searchIcon {
+        width: 32px;
+        height: 32px;
+    }
+
+    .searchPlaceholder {
+        font-size: 20px;
+        line-height: 32px;
+    }
+
+    .card {
+        margin: 0 16px 24px 16px;
+    }
+
+    .paginationContainer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        list-style: none;
+        color: #ffffff;
+        margin: 40px 0 80px 0;
+        padding: 0;
+    }
+
+    .paginationPreviousLink {
+        display: inline-block;
+        padding: 8px;
+        margin: 12px;
+        width: 144px;
+        font-size: 20px;
+        background-color: #dc0a2d;
+        border: 1px solid #dc0a2d;
+        border-radius: 4px;
+        text-align: center;
+        box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+    }
+
+    .paginationNextLink {
+        display: inline-block;
+        padding: 8px;
+        margin: 12px;
+        width: 144px;
+        font-size: 20px;
+        background-color: #dc0a2d;
+        border: 1px solid #dc0a2d;
+        border-radius: 4px;
+        text-align: center;
+        box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+    }
+
+    .paginationBreakLink {
+        display: inline-block;
+        padding: 8px;
+        margin: 12px;
+        width: 48px;
+        font-size: 20px;
+        background-color: #dc0a2d;
+        border: 1px solid #dc0a2d;
+        border-radius: 4px;
+        text-align: center;
+        box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+    }
+
+    .paginationPageLink {
+        display: inline-block;
+        padding: 8px;
+        margin: 12px;
+        width: 48px;
+        font-size: 20px;
+        background-color: #dc0a2d;
+        border: 1px solid #dc0a2d;
+        border-radius: 4px;
+        text-align: center;
+        box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+    }
+}
+
+.searchbar {
+    /* margin: 20px 0 40px 0; */
+    display: flex;
+    align-items: center;
+    /* padding: 8px 16px 8px 12px;
+    gap: 8px;
+    width: 200px;
+    height: 32px; */
+    background-color: #ffffff;
+    box-shadow: inset 0px 1px 3px 1px rgba(0, 0, 0, 0.25);
+    /* border-radius: 16px; */
+}
+
+.searchPlaceholder {
+    width: 100%;
+    font-family: Poppins, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+        Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+        sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    /* font-size: 10px;
+    line-height: 16px; */
+    color: #666666;
+    border: none;
+    outline: none;
+}
+
+.pokemonList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.error {
+    min-height: 100%;
+    padding: 24px;
+    color: #1d1d1d;
+}
+
+.loading {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #1d1d1d;
+}
