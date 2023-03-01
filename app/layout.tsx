@@ -1,6 +1,13 @@
 import Link from "next/link";
 
+import { Poppins } from "@next/font/google";
 import styles from "./layout.module.css";
+
+const poppins = Poppins({
+    weight: ["400", "700"],
+    style: ["normal", "italic"],
+    subsets: ["latin"],
+});
 
 export default function RootLayout({
     children,
@@ -10,9 +17,9 @@ export default function RootLayout({
     return (
         <html lang="en">
             <head>
-                <title>Next.js</title>
+                <title>raelu</title>
             </head>
-            <body>
+            <body className={poppins.className}>
                 <div className={styles.header}>
                     <div>
                         <Link href="/">Home</Link>
