@@ -45,7 +45,11 @@ async function getAllPokemon(offset: number) {
     });
     const data = await res.json();
 
-    return data.data;
+    if (!res.ok) {
+        throw new Error(data.message);
+    }
+
+    return data;
 }
 
 export default function Page() {
@@ -60,9 +64,9 @@ export default function Page() {
         const offset = 50 * (currentPage - 1);
         (async () => {
             const response = await getAllPokemon(offset);
-            setPokemon(response?.pokemon_v2_pokemon);
+            setPokemon(response.data?.pokemon_v2_pokemon);
             setTotalPokemon(
-                response?.pokemon_v2_pokemon_aggregate.aggregate.count
+                response.data?.pokemon_v2_pokemon_aggregate.aggregate.count
             );
             setLoading(false);
         })();
@@ -89,7 +93,7 @@ export default function Page() {
                     placeholder="Search"
                 />
             </div>
-            {loading ? (
+            {loading || pokemon.length < 1 ? (
                 <div className={styles.loading}>Loading...</div>
             ) : (
                 <div className={styles.pokemonList}>
@@ -134,7 +138,7 @@ export default function Page() {
                     pageRangeDisplayed={3}
                     onPageChange={afterPageClicked}
                     containerClassName={`${styles.paginationContainer} ${
-                        loading ? styles.hide : ""
+                        loading || pokemon.length < 1 ? styles.hide : ""
                     }`}
                     previousClassName={styles.paginationPrevious}
                     previousLinkClassName={styles.paginationPreviousLink}

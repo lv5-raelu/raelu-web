@@ -6,15 +6,21 @@ export default async function handler(
     req: NextApiRequest,
     res: NextApiResponse
 ) {
-    const pokeapiRes = await fetch(`${apiServer}`, {
-        headers: {
-            "Content-Type": "application/json",
-        },
-        method: "POST",
-        body: req.body,
-        cache: "no-store",
-    });
+    try {
+        const pokeapiRes = await fetch(`${apiServer}`, {
+            headers: {
+                "Content-Type": "application/json",
+            },
+            method: "POST",
+            body: req.body,
+            cache: "no-store",
+        });
 
-    const data = await pokeapiRes.json();
-    res.status(200).json(data);
+        const data = await pokeapiRes.json();
+        res.status(200).json(data);
+    } catch (err) {
+        res.status(500).json({
+            message: "Third Party API Servers Not Responding",
+        });
+    }
 }

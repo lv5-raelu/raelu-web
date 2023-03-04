@@ -95,7 +95,11 @@ async function getPokemonById(pokemonSpeciesId: number, generationId: number) {
     });
     const data = await res.json();
 
-    return data.data?.pokemon_v2_pokemon;
+    if (!res.ok) {
+        throw new Error(data.message);
+    }
+
+    return data;
 }
 
 export default function Page({ params }: { params: { id: number } }) {
@@ -111,8 +115,8 @@ export default function Page({ params }: { params: { id: number } }) {
     useEffect(() => {
         setLoading(true);
         (async () => {
-            const response = await getPokemonById(params.id, 7);
-            setPokemonData(response);
+            const response = await getPokemonById(params.id, 9);
+            setPokemonData(response.data?.pokemon_v2_pokemon);
             setLoading(false);
         })();
     }, [params.id]);
@@ -210,7 +214,7 @@ export default function Page({ params }: { params: { id: number } }) {
 
     return (
         <div className={styles.container}>
-            {loading ? (
+            {loading || pokemonData.length < 1 ? (
                 <div className={styles.loading}>Loading...</div>
             ) : (
                 <div>
